@@ -1,0 +1,1448 @@
+/*! ---- ---- ---- ---- CONFIG GENERAL ---- ---- ---- ---- */
+
+/*? ---- ---- Font ---- ---- */
+@font-face {
+    font-family: 'Moderat';
+    src: url(../font/ModeratFont/Moderat-Regular.ttf);
+}
+
+/*? ---- ---- General styles ---- ---- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Moderat';
+    transition: all .3s ease;
+
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    padding: 4rem 6rem;
+}
+
+section .title {
+    font-size: 35px;
+    margin-bottom: 2rem;
+}
+
+/*! ---- ---- ---- ---- MENU ---- ---- ---- ---- */
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 6rem;
+    transition: all  .5s ease;
+}
+
+/*? ---- ---- Menu Sticky ---- ---- */
+.menu.sticky {
+    background: var(--bg-color);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0,  .5);
+    max-height: 90px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/*? ---- ---- Menu Logo ---- ---- */
+
+.menu .logo img {
+    height: auto;
+    width: 100px;
+}
+
+/*? ---- ---- Menu Links ---- ---- */
+
+.nav-menu .links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-menu .links li a {
+    padding-left: 2rem;
+}
+
+.nav-menu .links li a:hover {
+    color: var(--blue-color);
+}
+
+.nav-menu .links li #button {
+    background: none;
+    border: 2px solid var(--blue-color);
+    border-radius: 30px;
+    color: var(--blue-color);
+    font-size: 14px;
+    font-weight: 900;
+    margin-left: 4rem;
+    padding: .8rem 2rem;
+    transition: all .2s ease-out;
+}
+
+.nav-menu .links li #button:hover {
+    cursor: pointer;
+    background: var(--blue-color);
+    color: white;
+}
+
+/*? ---- ---- Menu icon ---- ---- */
+.toggleMenu,
+.closeMenu {
+    display: none;
+    margin-top:  .5rem;
+}
+
+.toggleMenu:hover,
+.closeMenu:hover {
+    cursor: pointer;
+}
+
+.menuIcon:hover {
+    cursor: pointer;
+}
+
+/*? ---- ---- BUTTON DARK/LIGHT ---- ---- */
+.switch {
+    background: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    outline: none;
+    margin-left: 2rem;
+    margin-top: - .2rem;
+    transition: all  .3s ease;
+}
+
+.switch::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #F1F1F1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    -webkit-box-shadow: 0 0 2px 2px #000808;
+    box-shadow: 0 0 2px 2px #000808;
+}
+
+.switch.active {
+    background: orange;
+    color: #0000;
+}
+
+.switch.active::after {
+    left: unset;
+    right: 0;
+}
+
+.switch span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
+}
+
+/*? ---- ---- Collapse menu ---- ---- */
+
+.menu.collapse {
+    padding: 0;
+    height: 100vh;
+}
+
+.menu.collapse .logo a {
+    position: absolute;
+    z-index: 2;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.menu.collapse .nav-menu {
+    background: var(--bg-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu.collapse .nav-menu .links {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu.collapse .nav-menu .links li {
+    margin-top: 2.5rem;
+    font-size: 1.4rem;
+}
+
+.menu.collapse .nav-menu .links li #button {
+    margin-top: 3rem;
+    margin-left: 0;
+    font-size: 1.2rem;
+}
+
+.menu.collapse .closeMenu {
+    display: block;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    margin: 1.5rem 1rem;
+}
+
+.menu.collapse .toggleMenu {
+    display: none;
+}
+
+/*! ---- ---- ---- ---- MAIN ---- ---- ---- ---- */
+
+.main .grid {
+    display: grid;
+    grid-template-columns: 50% auto;
+    padding: 3.6rem 6rem 0 6rem;
+}
+
+/*? ---- ---- Left Side ---- ---- */
+.main .leftSide {
+    padding-top: 4rem;
+    padding-left: 10%;
+    margin-right: 1rem;
+}
+
+.main .leftSide .title {
+    font-size: calc(3vw + 1.2vw);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.main .leftSide .title .typed .typedText {
+    color: var(--yellow-color);
+    font-style: normal;
+}
+
+.main .leftSide .text {
+    color: var(--grey-text);
+    font-size: calc(1.2vw +  .5vw);
+    max-width: 400px;
+    line-height: 35px;
+    margin-bottom: 2rem;
+}
+
+.main .leftSide .buttons button {
+    color: var(--grey-text);
+    background: none;
+    font-size: 16px;
+    border: 2px solid var(--grey-text);
+    padding:  .5rem 1.2rem 1rem 1.2rem;
+    border-radius: 30px;
+    margin-left: 1rem;
+    transition: all  .2s ease-out;
+}
+
+.main .leftSide .buttons button img {
+    filter: grayscale(100%);
+    position: relative;
+    top: 4px;
+    margin-right: 5px;
+    height: 25px;
+    width: 25px;
+}
+
+.main .leftSide .buttons button:nth-child(2) img {
+    top: 7px;
+}
+
+.main .leftSide .buttons button:hover {
+    color: var(--color-button);
+    background: var(--blue-color);
+    border: 2px solid var(--blue-color);
+    cursor: pointer;
+    box-shadow: 0 0 30px 5px rgba(22, 96, 243,  .5);
+}
+
+.main .leftSide .buttons button:hover img {
+    filter: grayscale(0%);
+}
+
+/*? ---- ---- Right side ---- ---- */
+.main .rightSide {
+    text-align: center;
+}
+
+.main .rightSide img {
+    position: relative;
+    height: auto;
+    width: 34vw;
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-20px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+/*! ---- ---- ---- ---- ABOUT ME ---- ---- ---- ---- */
+
+/*? ---- ---- Bocadillo ---- ---- */
+.bocadillo {
+    position: absolute;
+    z-index: -1;
+    left: 25%;
+    height: 200px;
+    width: calc(70% - 30px);
+    background: var(--dark-color);
+    border-radius: 20px;
+    box-shadow: 1px 12px 33px rgba(0, 0, 0,  .5);
+    margin-left: 2rem;
+}
+
+.bocadillo:before {
+    border: 25px solid var(--dark-color);
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    position: absolute;
+    left: -45px;
+    top: calc(25% - 25px);
+}
+
+/*? ---- ---- Grid ---- ---- */
+.aboutMe .grid {
+    display: grid;
+    grid-template-columns: 25% 30% 45%;
+    height: 200px;
+}
+
+/*? ---- ---- Column ONE ---- ---- */
+.grid .columnOne img {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    left: 15%;
+}
+
+/*? ---- ---- Column TWO ---- ---- */
+.grid .columnTwo {
+    display: inherit;
+    align-content: center;
+    padding:  .5rem;
+}
+
+.grid .columnTwo p {
+    max-width: 90%;
+}
+
+.grid .columnTwo button {
+    margin-top: 1.5rem;
+    width: 200px;
+    background: var(--blue-color);
+    border: 2px solid var(--blue-color);
+    color: var(--color-button);
+    padding:  .8rem 2rem;
+    border-radius: 30px;
+    font-weight: 900;
+    font-size: 14px;
+    transition: all  .2s ease-out;
+}
+
+.grid .columnTwo button:hover {
+    background: none;
+    color: var(--blue-color);
+    border: 2px solid var(--blue-color);
+    cursor: pointer;
+}
+
+/*? ---- ---- Column THREE ---- ---- */
+
+.grid .columnThree ul li {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.grid .columnThree ul li .progTitle {
+    font-size: 18px;
+    width: 180px;
+}
+
+.grid .columnThree ul li span {
+    margin-left: 1.5rem;
+}
+
+.grid .columnThree ul li .progress {
+    background: rgba(0, 0, 0,  .25);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 20px;
+    width: 350px;
+    margin-left: 1rem;
+}
+
+.grid .columnThree ul li .progress-value {
+    border-radius: 100px;
+    height: 10px;
+}
+
+.grid .columnThree ul li:nth-child(1) .progress-value {
+    animation: load 3s normal forwards;
+    background: #ffd15c;
+}
+
+.grid .columnThree ul li:nth-child(2) .progress-value {
+    animation: load2 3s normal forwards;
+    background: #ff4c60;
+}
+
+.grid .columnThree ul li:nth-child(3) .progress-value {
+    animation: load3 3s normal forwards;
+    background: #6c6ce5;
+}
+
+@keyframes load {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 85%;
+    }
+}
+
+@keyframes load2 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 95%;
+    }
+}
+
+@keyframes load3 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+/*? ---- ---- STATS ---- ---- */
+
+.aboutMe .stats {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.aboutMe .stats .item {
+    display: inherit;
+    background: var(--dark-color);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+}
+
+.aboutMe .stats .item .info {
+    display: inherit;
+    flex-direction: column;
+    margin-left: 1rem;
+    text-align: center;
+}
+
+.aboutMe .stats .item .info .number {
+    font-size: 30px;
+}
+
+.aboutMe .stats .item .info .textDesc {
+    font-size: 15px;
+    margin-top:  .5rem;
+}
+
+.aboutMe .stats img {
+    filter: grayscale(100%);
+    height: 60px;
+    width: 60px;
+}
+
+/*! ---- ---- ---- ---- EXPERIENCE ---- ---- ---- ---- */
+
+.experience .containerGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.experience .academySide,
+.experience .workSide {
+    background: var(--dark-color);
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+.experience .academySide .item:nth-child(1),
+.experience .academySide .item:nth-child(2),
+.experience .workSide .item:nth-child(1),
+.experience .workSide .item:nth-child(2) {
+    padding-bottom: 3rem;
+}
+
+.experience .academySide .item img,
+.experience .workSide .item img {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top:  .5rem;
+}
+
+.experience .academySide .item .line,
+.experience .workSide .item .line {
+    width: 2px;
+    height: 90px;
+    border: 1px solid #f3c337;
+    position: absolute;
+    margin-top: 1.5vh;
+}
+
+.experience .academySide .item span,
+.experience .workSide .item span {
+    color: var(--grey-text);
+    margin-bottom: 1rem;
+}
+
+.experience .academySide .item h3,
+.experience .workSide .item h3 {
+    font-size: 24px;
+    margin-top: 1rem;
+    font-weight: 900;
+}
+
+.experience .academySide .item p,
+.experience .workSide .item p {
+    font-size: 16px;
+    margin-top:  .5rem;
+    font-weight: 100;
+}
+
+/*! ---- ---- ---- ---- SERVICES ---- ---- ---- ---- */
+
+.services .containerCard {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.services .containerCard .card {
+    width: 350px;
+    height: 300px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.services .containerCard .card:nth-child(1) {
+    background: #6c6ce5;
+}
+
+.services .containerCard .card:nth-child(2) {
+    background: #f3c337;
+}
+
+.services .containerCard .card:nth-child(3) {
+    background: #ff4c60;
+}
+
+.services .containerCard .card h3 {
+    font-size: 25px;
+    margin-bottom: 1rem;
+}
+
+.services .containerCard .card .text {
+    font-size: 16px;
+}
+
+.services .containerCard .card img {
+    width: 150px;
+    height: 150px;
+}
+
+.services .custom p {
+    width: 100%;
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 16px;
+}
+
+.services .custom p a {
+    color: var(--blue-color);
+}
+
+/*! ---- ---- ---- ---- WORKS ---- ---- ---- ---- */
+
+.works .gridContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.works .gridContainer .item {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0,  .5);
+}
+
+.works .gridContainer .item a img {
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    transition: all  .5s ease;
+}
+
+/*? ---- ---- Hover ---- ---- */
+
+.works .gridContainer .item:hover a img {
+    transform: scale(1.1);
+}
+
+.works .gridContainer .item .hoverText {
+    display: none;
+}
+
+.works .gridContainer .item:hover .hoverText {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0,  .4);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.works .gridContainer .item .hoverText img {
+    height: 60px;
+}
+
+.works .gridContainer .item .hoverText span {
+    font-size: 24px;
+    color: white;
+}
+
+/*? ---- ---- Load More button ---- ---- */
+
+.works #loadMore {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.works #loadMore a {
+    background: var(--blue-color);
+    border-radius: 20px;
+    color: white;
+    border: 2px solid var(--blue-color);
+    display: inline-block;
+    padding: 15px 30px;
+    transition: all  .25s ease-out;
+    -webkit-font-smoothing: antialiased;
+}
+
+.works #loadMore a:hover {
+    color: var(--blue-color);
+    background: none;
+    border: 2px solid var(--blue-color);
+}
+
+/*! ---- ---- ---- ---- CONTACT ---- ---- ---- ---- */
+
+.contact .gridContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+/*? ---- ---- Left Side ---- ---- */
+.contact .gridContainer .leftSide {
+    text-align: center;
+}
+
+.contact .gridContainer .leftSide img {
+    width: 80%;
+    height: auto;
+    animation: float 6s ease-in-out infinite;
+}
+
+/*? ---- ---- Right Side ---- ---- */
+
+.contact .gridContainer .rightSide {
+    margin: auto;
+    text-align: center;
+    width: 70%;
+}
+
+.contact .gridContainer .rightSide form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact .gridContainer .rightSide form input,
+.contact .gridContainer .rightSide form textarea {
+    padding:  .7rem 1rem;
+    font-family: Moderat;
+    font-size: 16px;
+    border-radius: 15px;
+    margin:  .5rem 0;
+    color: var(--text-color);
+    background: var(--color-footer);
+    border: none;
+    width: 100%;
+}
+
+.contact .gridContainer .rightSide form button {
+    background: var(--blue-color);
+    color: white;
+    border: 2px solid var(--blue-color);
+    padding:  .8rem 2rem;
+    border-radius: 30px;
+    font-weight: 900;
+    font-size: 14px;
+    transition: all  .2s ease-out;
+    width: 200px;
+    margin: 1rem auto;
+}
+
+.contact .gridContainer .rightSide form button:hover {
+    background: none;
+    color: var(--blue-color);
+    cursor: pointer;
+}
+
+/*? ---- ---- Paragraph ---- ---- */
+
+.contact p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 18px;
+}
+
+.contact p a {
+    color: var(--blue-color);
+}
+
+/*! ---- ---- ---- ---- FOOTER ---- ---- ---- ---- */
+footer {
+    background: var(--color-footer);
+    padding: 3rem;
+    text-align: center;
+}
+
+footer h3 {
+    margin-bottom: 2rem;
+}
+
+footer .icons {
+    text-align: center;
+}
+
+footer .icons img {
+    width: 40px;
+    height: 40px;
+    margin-left: 2rem;
+    filter: grayscale(100%);
+    transition: all  .3s ease;
+}
+
+footer .icons img:hover {
+    cursor: pointer;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+footer p {
+    color: var(--grey-text);
+    margin-top: 2rem;
+}
+
+
+
+/*! ---- ---- ---- ---- MEDIA QUERIES ---- ---- ---- ---- */
+
+@media (max-width: 1200px) {
+    /*? ---- ---- Section ---- ---- */
+    section {
+        padding: 3rem 5rem;
+    }
+
+    /*? ---- ---- Main ---- ---- */
+    .main .leftSide .buttons {
+        width: 400px;
+    }
+
+    .main .leftSide .buttons button {
+        margin-left: .4rem;
+    }
+
+    .grid .columnOne img {
+        left: 10%;
+    }
+
+    /*? ---- ---- About me ---- ---- */
+    #aboutMe .bocadillo {
+        left: 20%;
+        width: calc(75% - 30px);
+        margin-left: 3rem;
+    }
+
+    #aboutMe .grid .columnTwo {
+        padding-left: 0;
+        margin-left: -20px;
+    }
+
+    #aboutMe .grid .columnTwo button {
+        margin-top: 1rem;
+    }
+
+    #aboutMe .grid .columnThree ul li .progress {
+        width: 250px;
+    }
+
+    .aboutMe .stats .item {
+        width: 200px;
+    }
+
+    /*? ---- ---- Experience ---- ---- */
+    .experience .academySide,
+    .experience .workSide {
+        margin: 0 .5rem;
+    }
+
+    /*? ---- ---- Services ---- ---- */
+    .services .containerCard .card {
+        width: 250px;
+    }
+}
+
+@media (max-width: 1024px) {
+    /*? ---- ---- Section ---- ---- */
+    section {
+        padding: 3rem 5rem;
+    }
+
+    section .title {
+        font-size: 32px;
+        margin-bottom: 3rem;
+    }
+
+    /*? ---- ---- Menu ---- ---- */
+    .menu {
+        padding: 1rem 1rem;
+    }
+
+    .nav-menu .links li a {
+        padding-left: 1rem;
+    }
+
+    .nav-menu .links li #button {
+        margin-left: 1.2rem;
+        padding: .4rem 1.2rem;
+    }
+
+    .nav-menu .links li #switch {
+        margin-left: 1.2rem;
+    }
+
+    /*? ---- ---- Main ---- ---- */
+    .main .grid {
+        padding: 3rem 3rem 0 3rem;
+    }
+
+    .main .leftSide {
+        padding-top: 0;
+        margin-right: 0;
+    }
+
+    .main .leftSide .title {
+        margin-bottom: 1rem;
+    }
+
+    .main .leftSide .text {
+        color: var(--grey-text);
+        font-size: 1.9vw;
+        line-height: 30px;
+    }
+
+    .main .leftSide .buttons button img {
+        height: 18px;
+        width: auto;
+        margin-right: 2px;
+    }
+
+    .main .leftSide .buttons button {
+        margin-left:  .2rem;
+        padding: .1rem .4rem .6rem .4rem;
+        font-size: 1.5vw;
+    }
+
+    .main .rightSide img {
+        height: 90%;
+        width: 90%;
+    }
+
+    /*? ---- ---- About me ---- ---- */
+    #aboutMe .bocadillo {
+        position: absolute;
+        z-index: -1;
+        left: 10%;
+        margin-left: 0;
+        height: 500px;
+        width: calc(80% - 10px);
+        margin: 0 auto;
+    }
+
+    .bocadillo:before {
+        display: none;
+    }
+
+    .aboutMe .grid {
+        grid-template-columns: auto;
+        height: auto;
+    }
+
+    .aboutMe .grid .columnOne {
+        margin-bottom: 2rem;
+    }
+
+    .aboutMe .grid .columnOne img {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        left: 0;
+        padding-top: 1rem;
+    }
+
+    .aboutMe .grid .columnTwo p {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .aboutMe .grid .columnTwo button {
+        margin: 1.5rem auto;
+    }
+
+    .aboutMe .grid .columnThree {
+        margin: 0 auto;
+    }
+
+    .aboutMe .grid .columnThree ul li .progTitle {
+        width: auto;
+    }
+
+    .aboutMe .stats {
+        margin-top: 20%;
+    }
+
+    .aboutMe .stats img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .aboutMe .stats .item {
+        padding: 1rem  .5rem;
+        flex-shrink: 0;
+        align-items: center;
+        margin: 0 .4rem;
+        width: 165px;
+    }
+
+    .aboutMe .stats .item .info .number {
+        font-size: 25px;
+    }
+
+    .aboutMe .stats .item .info .textDesc {
+        font-size: 14px;
+    }
+
+    /*? ---- ---- Services ---- ---- */
+    .services .containerCard .card {
+        width: 220px;
+        height: 250px;
+        margin-left: 1rem;
+        flex-shrink: 0;
+    }
+
+    .services .containerCard .card h3 {
+        font-size: 20px;
+    }
+
+    .services .containerCard .card .text {
+        font-size: 14px;
+    }
+
+    .services .containerCard .card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /*? ---- ---- Experience ---- ---- */
+    #experience .title {
+        margin-bottom: 3rem;
+    }
+
+    .experience .academySide,
+    .experience .workSide {
+        padding: 1rem 2.5rem;
+    }
+
+    /*? ---- ---- Works ---- ---- */
+    .works .gridContainer .item {
+        margin: .8rem .5rem;
+    }
+
+    .works #loadMore a {
+        padding: 12px 20px;
+    }
+
+    .works #loadMore {
+        padding-bottom: 0;
+    }
+
+    /*? ---- ---- Contact ---- ---- */
+    .contact .gridContainer {
+        align-items: center;
+    }
+
+    .contact .gridContainer .rightSide {
+        width: 100%;
+    }
+
+    .contact .gridContainer .leftSide img {
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    /*? ---- ---- Section ---- ---- */
+    section {
+        padding: 2rem 4rem;
+    }
+
+    /*? ---- ---- Menu ---- ---- */
+    .menu .nav-menu {
+        display: none;
+    }
+
+    .nav-menu .links li #switch {
+        margin-left: 0;
+    }
+
+    .menu {
+        padding: 1rem;
+        align-items: flex-start;
+    }
+
+    .menu.collapse .nav-menu .links li {
+        font-size: 1.25rem;
+    }
+
+    .menu.collapse .nav-menu .links li a {
+        padding-left: 0;
+    }
+
+    .menu.collapse .nav-menu .links li #button {
+        font-size: 1rem;
+    }
+
+    .menu.sticky {
+        max-height: 80px;
+    }
+
+    .menu .toggleMenu {
+        display: block;
+    }
+
+    .menu .logo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    /*? ---- ---- Main ---- ---- */
+    .main .grid {
+        grid-template-columns: auto;
+        padding: 1rem;
+    }
+
+    .main .leftSide {
+        padding: 0 2rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .main .leftSide .title {
+        font-size: 26px;
+    }
+
+    .main .leftSide .text {
+        font-size: 15px;
+    }
+
+    .main .leftSide .buttons {
+        min-height: 70px;
+    }
+
+    .main .leftSide .buttons button {
+        font-size: 13px;
+        border: 1px solid var(--grey-text);
+        padding:  .3rem  .4rem  .8rem  .4rem;
+        margin-left: 1rem;
+    }
+
+    .main .leftSide .buttons button:hover {
+        box-shadow: 0 0 25px 1px rgba(22, 96, 243,  .5);
+        border: 1px solid var(--blue-color);
+    }
+
+    .main .leftSide .buttons button img {
+        margin-right: 0;
+        height: 20px;
+        width: 20px;
+    }
+
+    .main .rightSide img {
+        height: auto;
+        width: 55vw;
+        margin-top: 3rem;
+    }
+
+    /*? ---- ---- About me ---- ---- */
+
+    .bocadillo {
+        box-shadow: 1px 12px 20px rgba(0, 0, 0,  .5);
+    }
+
+    .aboutMe .grid {
+        justify-content: center;
+    }
+
+    .aboutMe .grid .columnOne {
+        margin-bottom: .8rem;
+    }
+
+    #aboutMe .grid .columnTwo {
+        margin-left: 0;
+    }
+
+    .grid .columnTwo p {
+        max-width: 65%;
+        font-size: 15px;
+    }
+
+    .grid .columnTwo button {
+        width: 150px;
+        padding:  .5rem 1.5rem;
+        font-weight: 900;
+        font-size: 12px;
+    }
+
+    .grid .columnThree {
+        width: 90%;
+    }
+
+    .grid .columnThree ul li {
+        justify-content: center;
+    }
+
+    .grid .columnThree ul li span {
+        margin-left: 4px;
+    }
+
+    .grid .columnThree ul li .progTitle {
+        font-size: 15px;
+    }
+
+    #aboutMe .grid .columnThree ul li .progress {
+        width: 45%;
+    }
+
+    .grid .columnThree ul li .progress-value {
+        height: 6px;
+    }
+
+    .grid .columnThree ul li .progress {
+        height: 12px;
+        align-self: center;
+    }
+
+    .aboutMe .stats {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-items: center;
+    }
+
+    .aboutMe .stats .item {
+        display: flex;
+        margin:  .5rem;
+        width: 85%;
+        justify-content: center;
+    }
+
+    .grid .columnThree {
+        width: 75%;
+    }
+
+    .grid .columnThree ul li .progress {
+        width: 80%;
+    }
+
+    /*? ---- ---- Services ---- ---- */
+    .services .containerCard .card .text {
+        font-size: 16px;
+    }
+
+    .services .containerCard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services .containerCard .card {
+        margin-top: 1rem;
+        width: 90%;
+    }
+
+    /*? ---- ---- Experience ---- ---- */
+    .experience .containerGrid {
+        grid-template-columns: auto;
+    }
+
+    .experience .academySide,
+    .experience .workSide {
+        padding: 1rem .5rem 0 calc(10% + 10px);
+    }
+
+    .experience .academySide .item h3,
+    .experience .workSide .item h3 {
+        font-size: 22px;
+    }
+
+    .experience .academySide .item p,
+    .experience .workSide .item p {
+        font-size: 14px;
+    }
+
+    .experience .workSide,
+    .experience .academySide {
+        padding-bottom: 5%;
+    }
+
+    .experience .workSide {
+        margin-top: 10%;
+    }
+
+    /*? ---- ---- Works ---- ---- */
+    .works .gridContainer {
+        grid-template-columns: auto;
+    }
+
+    .works #loadMore a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    /*? ---- ---- Contact ---- ---- */
+    .contact .gridContainer {
+        grid-template-columns: auto;
+    }
+
+    .contact .gridContainer .leftSide img {
+        width: 65%;
+    }
+
+    .contact .gridContainer .rightSide form button {
+        padding:  .8rem 1rem;
+        font-size: 14px;
+        width: 150px;
+    }
+
+    .contact p {
+        font-size: 16px;
+    }
+
+    /*? ---- ---- Footer ---- ---- */
+    footer {
+        font-size: 14px;
+    }
+
+    footer .icons img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    /*? ---- ---- Section ---- ---- */
+    section {
+        padding: 2rem 2rem;
+    }
+
+    /*? ---- ---- Main ---- ---- */
+    .main .leftSide .buttons {
+        width: auto;
+    }
+
+    /*? ---- ---- About me ---- ---- */
+    .bocadillo {
+        height: 480px;
+        left: 5%;
+        width: calc(90% - 5px);
+    }
+
+    .aboutMe .title {
+        font-size: 30px;
+    }
+
+    .aboutMe .columnOne,
+    .aboutMe .columnTwo,
+    .aboutMe .columnThree {
+        width: 95%;
+    }
+
+    .aboutMe .columnOne img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .aboutMe .columnTwo p {
+        font-size: 14px;
+        padding: 0  .5rem;
+    }
+
+    .aboutMe .columnTwo button {
+        width: 150px;
+        padding:  .5rem 0;
+    }
+
+    .grid .columnThree ul li {
+        justify-content: center;
+    }
+
+    .grid .columnThree ul li .progTitle {
+        font-size: 14px;
+        width: auto;
+        margin-left: 0;
+    }
+
+    .grid .columnThree ul li span {
+        font-size: 14px;
+    }
+
+    .grid .columnThree ul li .progress {
+        width: 120px;
+    }
+
+    .aboutMe .stats {
+        margin-top: 25%;
+    }
+
+    .aboutMe .stats .item {
+        padding:  .2rem;
+    }
+
+    .aboutMe .stats .item .info {
+        margin-left:  .5rem;
+    }
+
+    .aboutMe .stats .item .info .number {
+        font-size: 22px;
+    }
+
+    .aboutMe .stats .item .info .textDesc {
+        font-size: 12px;
+        margin-top:  .2rem;
+    }
+
+    .aboutMe .stats img {
+        height: 45px;
+        width: 45px;
+    }
+
+    /*? ---- ---- Experience ---- ---- */
+    .experience .academySide .item .line,
+    .experience .workSide .item .line {
+        margin-left: -2.5%;
+        margin-top: 1%;
+    }
+
+    /*? ---- ---- Services ---- ---- */
+    .services .containerCard .card .text {
+        padding: 0 10px;
+    }
+
+    /*? ---- ---- Works ---- ---- */
+    .works .gridContainer .item .hoverText img {
+        height: 30px;
+    }
+
+    .works .gridContainer .item .hoverText span {
+        font-size: 18px;
+    }
+
+    /*? ---- ---- Contact ---- ---- */
+    .contact p {
+        font-size: 16px;
+    }
+
+    /*? ---- ---- Footer ---- ---- */
+    footer .icons img {
+        width: 30px;
+        height: 30px;
+        margin-left: 1rem;
+    }
+}

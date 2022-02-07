@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ----- ----- ----- FAVICON ----- ----- ----- -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- ----- ----- ----- TITLE ----- ----- ----- -->
+    <title>Portfolio</title>
+    <!-- ----- ----- ----- OWN CSS ----- ----- ----- -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- ----- ----- ----- FONT AWESOME ----- ----- ----- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!-- ----- ----- ----- AOS ----- ----- ----- -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- ----- ----- ----- MENU ----- ----- ----- -->
+        <nav class="menu" id="menu">
+            <div class="logo">
+                <a href="#"><img src="./img/dk_logo.png" id="logo"></a>
+            </div>
+            <div class="menuIcon">
+                <img src="./img/icons/menu.svg" class="toggleMenu" id="toggleMenu" height="30px" width="30px">
+                <img src="./img/icons/close.svg" class="closeMenu" id="closeMenu" height="40px" width="40px">
+            </div>
+            <div class="nav-menu">
+                <ul class="links" id="links">
+                    <li><a href="#aboutMe" class="link">About Me</a></li>
+                    <li><a href="#experience" class="link">Experience</a></li>
+                    <li><a href="#services" class="link">Services</a></li>
+                    <li><a href="#works" class="link">Works</a></li>
+                    <li><button id="button">Contact</button></li>
+                    <li><button class="switch" id="switch">
+                        <span><i class="fas fa-sun"></i></span>
+                        <span><i class="fas fa-moon"></i></span>
+                    </button></li>
+                </ul>
+            </div>
+            
+            
+        </nav>
+        <!-- ----- ----- ----- MAIN ----- ----- ----- -->
+        <div class="main">
+            <div class="grid">
+                <!-- ----- LEFT SIDE ----- -->
+                <div class="leftSide">
+                    <div class="title">Hi, I'm <span class="typed"></span></div>
+                    <div class="text">I design grapgic visuals and user interfaces (UI) for apps and websites</div>
+                    <div class="buttons">
+                        <button><img src="./img/icons/google-inbox.svg"> Get in touch</button>
+                        <button><img src="./img/icons/portfolio.svg"> View portfolio</button>
+                    </div>
+                </div>
+                <!-- ----- RIGHT SIDE ----- -->
+                <div class="rightSide">
+                    <img src="./img/Software engineer-amico.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- ----- ----- ----- ABOUT ME ----- ----- ----- -->
+        <section class="aboutMe" id="aboutMe" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
+            <h1 class="title">About Me</h1>
+            <!-- ----- GRID COLUMNS ----- -->
+            <div class="bocadillo"></div>
+            <div class="grid">
+                <div class="columnOne">
+                    <img src="./img/avatar.svg">
+                </div>
+                <div class="columnTwo">
+                    <p>I am Darko, web developer from London,
+                        United Kingdom. I have rich experience in web
+                        site design and building and customization, also I
+                        am good at WordPress.</p>
+                    <button>Download CV</button>
+                </div>
+                <div class="columnThree">
+                    <ul>
+                        <li>
+                            <span class="progTitle">Development</span>
+                            <div class="progress">
+                                <div class="progress-value"></div>
+                            </div>
+                            <span>85%</span>
+                        </li>
+                        <li>
+                            <span class="progTitle">UI/UX Design</span>
+                            <div class="progress">
+                                <div class="progress-value"></div>
+                            </div>
+                            <span>95%</span>
+                        </li>
+                        <li>
+                            <span class="progTitle">Photography</span>
+                            <div class="progress">
+                                <div class="progress-value"></div>
+                            </div>
+                            <span>70%</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ----- STATS----- -->
+            <div class="stats">
+                <div class="item">
+                    <img src="./img/icons/checklist.svg">
+                    <div class="info">
+                        <span class="number">198</span>
+                        <span class="textDesc">Projects completed</span>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <img src="./img/icons/coffee.svg">
+                    <div class="info">
+                        <span class="number">5670</span>
+                        <span class="textDesc">Cup of coffee</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./img/icons/discussion.svg">
+                    <div class="info">
+                        <span class="number">427</span>
+                        <span class="textDesc">Satisfied clients</span>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <img src="./img/icons/winner.svg">
+                    <div class="info">
+                        <span class="number">35</span>
+                        <span class="textDesc">Nominees winner</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ----- ----- ----- EXPERIENCE ----- ----- ----- -->
+        <section class="experience" id="experience" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
+            <h1 class="title">Experience</h1>
+            <div class="containerGrid">
+                <div class="academySide">
+                    <div class="item">
+                        <img src="./img/icons/academy.svg">
+                        <div class="line"></div>
+                        <span>2019-Present</span>
+                        <h3>Academic Degree</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci soluta, molestiae
+                            consectetur quam eveniet.</p>
+                    </div>
+                    <div class="item">
+                        <img src="./img/icons/academy.svg">
+                        <div class="line"></div>
+                        <span>2017-2013</span>
+                        <h3>Bachelor's Degree</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci soluta, molestiae
+                            consectetur quam eveniet.</p>
+                    </div>
+                    <div class="item">
+                        <img src="./img/icons/academy.svg">
+                        <div class="line"></div>
+                        <span>2013-2009</span>
+                        <h3>Honours Degree</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci soluta, molestiae
+                            consectetur quam eveniet.</p>
+                    </div>
+                </div>
+                <div class="workSide">
+                    <div class="item">
+                        <img src="./img/icons/work.svg">
+                        <div class="line"></div>
+                        <span>2019-Present</span>
+                        <h3>Web Designer</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci soluta, molestiae
+                            consectetur quam eveniet.</p>
+                    </div>
+                    <div class="item">
+                        <img src="./img/icons/work.svg">
+                        <div class="line"></div>
+                        <span>2017-2013</span>
+                        <h3>Front-End Developer</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci soluta, molestiae
+                            consectetur quam eveniet.</p>
+                    </div>
+                    <div class="item">
+                        <img src="./img/icons/work.svg">
+                        <div class="line"></div>
+                        <span>2013-2009</span>
+                        <h3>Back-End Developer</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci soluta, molestiae
+                            consectetur quam eveniet.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ----- ----- ----- SERVICES ----- ----- ----- -->
+        <section class="services" id="services" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
+            <h1 class="title">Services</h1>
+            <div class="containerCard">
+                <div class="card">
+                    <img src="./img/icons/design.svg">
+                    <h3>UI/UX Design</h3>
+                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit a quae architecto
+                        doloribus quo!</p>
+                </div>
+                <div class="card">
+                    <img src="./img/icons/website-builder.svg">
+                    <h3>Web Development</h3>
+                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit a quae architecto
+                        doloribus quo!</p>
+                </div>
+                <div class="card">
+                    <img src="./img/icons/support.svg">
+                    <h3>Support</h3>
+                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit a quae architecto
+                        doloribus quo!</p>
+                </div>
+            </div>
+            <div class="custom">
+                <p>Looking for a custom job? <a href="#contact">Click here</a> to contact me!</p>
+            </div>
+        </section>
+
+        <!-- ----- ----- ----- WORKS ----- ----- ----- -->
+        <section class="works" id="works" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
+            <h1 class="title">Works</h1>
+            <div class="gridContainer">
+                <div class="item">
+                    <a href="#"><img src="./img/Works/afterglo-1.jpg"></a>
+                    <div class="hoverText">
+                        <img src="./img/icons/view.svg">
+                        <span>View More!</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="./img/Works/airpods-max-1.jpg"></a>
+                    <div class="hoverText">
+                        <img src="./img/icons/view.svg">
+                        <span>View More!</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="./img/Works/crazy-about-eggs-1.jpg"></a>
+                    <div class="hoverText">
+                        <img src="./img/icons/view.svg">
+                        <span>View More!</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="./img/Works/eidosshanghai-1.jpg"></a>
+                    <div class="hoverText">
+                        <img src="./img/icons/view.svg">
+                        <span>View More!</span>
+                    </div>
+                </div>
+                <div class="item" style="display: none;">
+                    <a href="#"><img src="./img/Works/lucid-motors-1.jpg"></a>
+                    <div class="hoverText">
+                        <img src="./img/icons/view.svg">
+                        <span>View More!</span>
+                    </div>
+                </div>
+                <div class="item" style="display: none;">
+                    <a href="#"><img src="./img/Works/Niarra-Travel-1.jpg"></a>
+                    <div class="hoverText">
+                        <img src="./img/icons/view.svg">
+                        <span>View More!</span>
+                    </div>
+                </div>
+            </div>
+            <div id="loadMore">
+                <a href="#">Load More</a>
+            </div>
+        </section>
+
+        <!-- ----- ----- ----- CONTACT ----- ----- ----- -->
+        <section class="contact" id="contact" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
+            <h1 class="title">Get in Touch</h1>
+            <div class="gridContainer">
+                <div class="leftSide">
+                    <img src="./img/Typing-bro.svg">
+                </div>
+                <div class="rightSide">
+                    <form action="#">
+                        <input type="text" placeholder="Your name">
+                        <input type="email" placeholder="Email address">
+                        <input type="text" placeholder="Subject">
+                        <textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
+                        <button>Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <p>Don't like forms? Send me an <a href="#">email</a></p>
+        </section>
+
+        <!-- ----- ----- ----- FOOTER ----- ----- ----- -->
+        <footer id="footer">
+            <h3>Follow Us!</h3>
+            <div class="icons">
+                <img src="./img/icons/instagram.svg">
+                <img src="./img/icons/facebook-logo-2019.svg">
+                <img src="./img/icons/behance.svg">
+                <img src="./img/icons/pinterest.svg">
+                <img src="./img/icons/twitter.svg">
+            </div>
+            <p>Copyright© 2021 Darko, All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- ----- ----- ----- TYPED JS ----- ----- ----- -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <!-- ----- ----- ----- JQUERY ----- ----- ----- -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- ----- ----- ----- AOS ----- ----- ----- -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- ----- ----- ----- OWN JS ----- ----- ----- -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
