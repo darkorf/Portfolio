@@ -27,6 +27,13 @@ const typed = new Typed('.typed', {
 
 // -- ----- ----- ----- MENU ----- ----- ----- --
 
+// ACTIVE LINK
+$("#links li").click(function(){
+  $("#links li").removeClass("active")
+    $(this).addClass("active");
+    $(":root").css("--width-active", $(this).width() + "px");
+});
+
 // OPEN
 $('#toggleMenu').on('click', function () {
   $("#menu").addClass('collapse');

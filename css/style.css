@@ -82,6 +82,19 @@ section .title {
     padding-left: 2rem;
 }
 
+.nav-menu .links li.active a {
+    color: var(--blue-color);
+}
+
+.nav-menu .links li.active a:before {
+    content: "";
+    position: absolute;
+    bottom: 25%;
+    width: calc(var(--width-active) - 32px);
+    height: 1px;
+    background: var(--blue-color);
+}
+
 .nav-menu .links li a:hover {
     color: var(--blue-color);
 }
@@ -890,6 +903,10 @@ footer p {
         padding-left: 1rem;
     }
 
+    .nav-menu .links li.active a:before {
+        width: calc(var(--width-active) - 16px);
+    }
+
     .nav-menu .links li #button {
         margin-left: 1.2rem;
         padding: .4rem 1.2rem;
@@ -1082,6 +1099,10 @@ footer p {
 
     .nav-menu .links li #switch {
         margin-left: 0;
+    }
+
+    .nav-menu .links li.active a:before {
+        display: none;
     }
 
     .menu {
