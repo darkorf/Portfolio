@@ -2,7 +2,7 @@
 AOS.init();
 
 // -- ----- ----- ----- TYPED JS ----- ----- ----- --
-const typed = new Typed('.typed', {
+new Typed('.typed', {
   strings: [
     '<i class="typedText">Designer</i>',
     '<i class="typedText">Developer</i>',
@@ -105,7 +105,7 @@ document.querySelectorAll('a[href*="#"]').forEach(anchor => {
       if (targetElement) {
         const headerOffset = document.querySelector('#menu').offsetHeight || 100; // Ajusta según el tamaño del menú
         const targetPosition = targetElement.offsetTop - headerOffset; // Calcula la posición correcta con offset
-        const startPosition = window.pageYOffset;
+        const startPosition = window.scrollY;
         const distance = targetPosition - startPosition;
         const duration = 200; // Duración de la animación en milisegundos
         let startTime = null;
@@ -132,29 +132,17 @@ document.querySelectorAll('a[href*="#"]').forEach(anchor => {
   });
 });
 
-// Escucha cuando la ventana se redimensiona y recalcula los offsets
-window.addEventListener('resize', () => {
-  // Ajusta dinámicamente la altura de los elementos como headers o menús
-  const header = document.querySelector('header');
-  if (header) {
-    const headerOffset = header.offsetHeight;
-    // Puedes hacer aquí otros ajustes si es necesario.
-  }
-});
-
-
-
 
 // -- ----- ----- ----- LOAD MORE ----- ----- ----- --
 $(document).ready(function () {
   $(".item").slice(0, 3).show();
-  if ($(".item:hidden").length != 0) {
+  if ($(".item:hidden").length !== 0) {
     $("#loadMore").show();
   }
   $("#loadMore").on('click', function (e) {
     e.preventDefault();
     $(".item:hidden").slice(0, 6).slideDown();
-    if ($(".item:hidden").length == 0) {
+    if ($(".item:hidden").length === 0) {
       $("#loadMore").fadeOut('slow');
     }
   });
@@ -227,8 +215,8 @@ $(window).on('load resize', function () {
   let width = $(".experience .item").width(),
     img = $(".experience .item img"),
     line = $(".experience .item .line"),
-    leftImg = Math.round((width * - 0.1) - 4);
-  leftLine = Math.round((width * - 0.085));
+    leftImg = Math.round((width * - 0.1) - 4),
+    leftLine = Math.round((width * - 0.085));
 
   img.css("left", leftImg);
   line.css("margin-left", leftLine);

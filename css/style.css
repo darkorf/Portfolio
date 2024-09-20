@@ -95,6 +95,10 @@ section .title {
     background: var(--blue-color);
 }
 
+.nav-menu .links li.active a:has(button):before {
+    content: none; /* O cualquier otra propiedad para anular el estilo */
+}
+
 .nav-menu .links li a:hover {
     color: var(--blue-color);
 }
@@ -153,7 +157,7 @@ section .title {
     display: flex;
     outline: none;
     margin-left: 2rem;
-    margin-top: - .2rem;
+    /* margin-top: - .2rem; */
     transition: all  .3s ease;
 }
 
