@@ -34,18 +34,8 @@ $("#links li").click(function(){
     $(":root").css("--width-active", $(this).width() + "px");
 });
 
-// // OPEN
-// $('#toggleMenu').on('click', function () {
-//   $("#menu").addClass('collapse');
-//   $("html").css("overflow", "hidden");
-// });
 
-// // CLOSE
-// $('#closeMenu').on('click', function () {
-//   $("#menu").removeClass('collapse');
-//   $("html").css("overflow", "scroll");
-// });
-
+//CLOSE AND OPEN MENU
 document.addEventListener('DOMContentLoaded', function() {
   const toggleMenu = document.querySelector('.toggleMenu');
   const closeMenu = document.querySelector('.closeMenu');
@@ -82,14 +72,6 @@ $(window).scroll(function () {
   }
 });
 
-
-// ANCHOR TO SECTION ON CLICK LINK
-// $('a[href*="#"]').on('click', function (e) {
-//   $('html,body').animate({
-//     scrollTop: $($(this).attr('href')).offset().top - 100
-//   }, 200);
-//   e.preventDefault();
-// });
 
 // Función de desplazamiento suave con recalculación dinámica
 document.querySelectorAll('a[href*="#"]').forEach(anchor => {

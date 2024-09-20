@@ -1396,6 +1396,30 @@ footer p {
     }
 }
 
+@media (max-width: 767px) and (orientation: landscape) {
+    .menu.collapse .nav-menu .links li {
+        font-size: .8rem;
+        margin-top: .8rem;
+        margin-bottom: 0;
+    }
+
+    .menu.collapse .nav-menu .links li #button {
+        font-size: .85rem;
+        margin-top: .5rem;
+        padding: .4rem .8rem;
+        font-weight: 700;
+    }
+
+    .menu .switch span,
+    .menu .switch::after {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 480px) {
     /*? ---- ---- Section ---- ---- */
     section {
